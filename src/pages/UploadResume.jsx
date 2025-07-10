@@ -23,7 +23,7 @@ const UploadResume = () => {
     setResume(null);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:8080/api/resume/me?userId=${user.id}`);
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/resume/me?userId=${user.id}`);
       if (!res.ok) throw new Error('No resume found');
       const data = await res.json();
       setResume(data);
@@ -62,7 +62,7 @@ const UploadResume = () => {
       const formData = new FormData();
       formData.append('resume', file);
       // Send userId as query param
-      const res = await fetch(`http://localhost:8080/api/resume/upload?userId=${user.id}`, {
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/resume/upload?userId=${user.id}`, {
         method: 'POST',
         body: formData
       });
@@ -83,7 +83,7 @@ const UploadResume = () => {
     setError(null);
     setSuccess(null);
     try {
-      const res = await fetch(`http://localhost:8080/api/resume/me?userId=${user.id}`, {
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/resume/me?userId=${user.id}`, {
         method: 'DELETE'
       });
       if (!res.ok) throw new Error('Delete failed');
@@ -145,7 +145,7 @@ const UploadResume = () => {
                   <div className="mb-3 d-flex gap-2">
                     <a
                       className="btn btn-outline-primary"
-                      href={`http://localhost:8080/api/resume/file?userId=${user.id}`}
+                      href={`https://hirevision-backend.onrender.com/api/resume/file?userId=${user.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

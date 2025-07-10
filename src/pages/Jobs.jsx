@@ -16,7 +16,7 @@ const Jobs = () => {
       setError(null);
       try {
         // If /api/jobs/all does not exist yet, you can mock this or add it to the backend
-        const res = await fetch('http://localhost:8080/api/jobs/all');
+        const res = await fetch('https://hirevision-backend.onrender.com/api/jobs/all');
         if (!res.ok) throw new Error('Failed to fetch jobs');
         const data = await res.json();
         setJobs(data);
@@ -39,7 +39,7 @@ const Jobs = () => {
       return;
     }
     try {
-      const res = await fetch('http://localhost:8080/api/jobs/applications/apply', {
+      const res = await fetch('https://hirevision-backend.onrender.com/api/jobs/applications/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: user.id, jobId })

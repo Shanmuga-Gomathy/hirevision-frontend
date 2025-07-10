@@ -22,7 +22,7 @@ const Candidates = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:8080/api/jobs/applications/byRecruiter?recruiterId=${user.id}`);
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/jobs/applications/byRecruiter?recruiterId=${user.id}`);
       if (!res.ok) throw new Error('Failed to fetch applications');
       const data = await res.json();
       setApplications(data);
@@ -42,7 +42,7 @@ const Candidates = () => {
   const handleShortlistSubmit = async () => {
     if (!selectedAppId) return;
     try {
-      const res = await fetch('http://localhost:8080/api/jobs/applications/shortlist', {
+      const res = await fetch('https://hirevision-backend.onrender.com/api/jobs/applications/shortlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ applicationId: selectedAppId, message: shortlistMessage })
@@ -58,7 +58,7 @@ const Candidates = () => {
 
   const handleViewResume = (userId) => {
     if (!userId) return;
-    window.open(`http://localhost:8080/api/resume/file?userId=${userId}`, '_blank');
+    window.open(`https://hirevision-backend.onrender.com/api/resume/file?userId=${userId}`, '_blank');
   };
 
   return (

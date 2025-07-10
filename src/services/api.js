@@ -1,6 +1,6 @@
 // API Configuration and base setup
-const API_BASE_URL = 'http://localhost:8080/api';
-const API_V1_BASE_URL = 'http://localhost:8080/api/v1';
+const API_BASE_URL = 'https://hirevision-backend.onrender.com/api';
+const API_V1_BASE_URL = 'https://hirevision-backend.onrender.com/api/v1';
 
 // Get stored token for authenticated requests
 const getAuthToken = () => {

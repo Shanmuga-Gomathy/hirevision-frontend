@@ -19,7 +19,7 @@ const Dashboard = () => {
   const fetchResume = async () => {
     setLoadingResume(true)
     try {
-      const res = await fetch(`http://localhost:8080/api/resume/me/parsed?userId=${user.id}`)
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/resume/me/parsed?userId=${user.id}`)
       if (!res.ok) throw new Error('No resume found')
       const data = await res.json()
       setResume(data)
@@ -32,7 +32,7 @@ const Dashboard = () => {
 
   const handleDeleteResume = async () => {
     if (!window.confirm('Are you sure you want to delete your resume?')) return
-    await fetch(`http://localhost:8080/api/resume/me?userId=${user.id}`, { method: 'DELETE' })
+    await fetch(`https://hirevision-backend.onrender.com/api/resume/me?userId=${user.id}`, { method: 'DELETE' })
     setResume(null)
     setShowResumeModal(false)
   }

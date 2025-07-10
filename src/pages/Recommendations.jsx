@@ -20,7 +20,7 @@ const Recommendations = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:8080/api/jobs/recommendations?userId=${user.id}`);
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/jobs/recommendations?userId=${user.id}`);
       if (!res.ok) throw new Error('Failed to fetch recommendations');
       const data = await res.json();
       setRecommendations(data);
@@ -33,7 +33,7 @@ const Recommendations = () => {
 
   const fetchUserApplications = async () => {
     try {
-      const res = await fetch(`http://localhost:8080/api/jobs/applications/byUser?userId=${user.id}`);
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/jobs/applications/byUser?userId=${user.id}`);
       if (!res.ok) throw new Error('Failed to fetch applications');
       const data = await res.json();
       setUserApplications(data);
@@ -48,7 +48,7 @@ const Recommendations = () => {
       return;
     }
     try {
-      const res = await fetch('http://localhost:8080/api/jobs/applications/apply', {
+      const res = await fetch('https://hirevision-backend.onrender.com/api/jobs/applications/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: user.id, jobId })

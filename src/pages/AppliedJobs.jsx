@@ -17,7 +17,7 @@ const AppliedJobs = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:8080/api/jobs/applications/byUser?userId=${user.id}`);
+      const res = await fetch(`https://hirevision-backend.onrender.com/api/jobs/applications/byUser?userId=${user.id}`);
       if (!res.ok) throw new Error('Failed to fetch applications');
       const data = await res.json();
       setApplications(data);
