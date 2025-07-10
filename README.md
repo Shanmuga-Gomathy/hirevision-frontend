@@ -1,154 +1,91 @@
-# Job Referral App - Frontend
+# HireVision – AI-Powered Job Portal
 
-A modern React.js frontend for the Job Referral App, built with Vite and Bootstrap.
+Welcome! 👋
 
-## 🚀 Features
-
-- **Modern React 18** with hooks and functional components
-- **Vite** for fast development and building
-- **Bootstrap 5** for responsive design
-- **React Router** for navigation
-- **Axios** for API communication
-- **Email confirmation** flow
-- **Role-based registration** (User, Recruiter, Admin)
-- **Responsive design** for all devices
-
-## 📋 Prerequisites
-
-- Node.js (version 16 or higher)
-- npm or yarn
-- Backend server running on `http://localhost:8080`
-
-## 🛠️ Installation
-
-1. **Navigate to the frontend directory:**
-   ```bash
-   cd JobReferralApp-frontend
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser and visit:**
-   ```
-   http://localhost:3000
-   ```
-
-## 🏗️ Project Structure
-
-```
-src/
-├── components/          # Reusable components
-│   ├── Navbar.jsx      # Navigation bar
-│   └── Footer.jsx      # Footer component
-├── pages/              # Page components
-│   ├── Home.jsx        # Landing page
-│   ├── About.jsx       # About page
-│   ├── HowItWorks.jsx  # How it works page
-│   ├── Register.jsx    # Registration form
-│   ├── EmailConfirmation.jsx # Email confirmation
-│   └── ComingSoon.jsx  # Coming soon pages
-├── App.jsx             # Main app component
-├── main.jsx            # Entry point
-├── App.css             # App-specific styles
-└── index.css           # Global styles
-```
-
-## 🎨 Design Features
-
-- **Professional color scheme** with primary blue (#1E40AF)
-- **Responsive design** that works on all devices
-- **Modern UI** with hover effects and animations
-- **Bootstrap components** for consistency
-- **Custom CSS** for enhanced styling
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## 🌐 Pages
-
-1. **Home** (`/`) - Landing page with hero section and features
-2. **About** (`/about`) - Company information and mission
-3. **How It Works** (`/how-it-works`) - Process explanation
-4. **Register** (`/register`) - User registration with role selection
-5. **Email Confirmation** (`/confirm`) - Email verification
-6. **Coming Soon** - Placeholder pages for future features
-
-## 🔌 API Integration
-
-The frontend connects to the Spring Boot backend:
-
-- **Registration**: `POST /api/v1/registration`
-- **Email Confirmation**: `GET /api/v1/registration/confirm?token={token}`
-
-### Registration Request Format:
-```json
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "userType": "USER"
-}
-```
-
-## 🎯 User Roles
-
-1. **USER** - Job seekers looking for opportunities
-2. **RECRUITER** - Companies posting jobs and finding candidates
-3. **ADMIN** - Platform administrators managing the system
-
-## 🚀 Deployment
-
-1. **Build the project:**
-   ```bash
-   npm run build
-   ```
-
-2. **The built files will be in the `dist/` directory**
-
-3. **Deploy the `dist/` folder to your web server**
-
-## 🔧 Configuration
-
-### Vite Configuration
-- **Port**: 3000 (development)
-- **Proxy**: `/api` requests are proxied to `http://localhost:8080`
-- **Hot reload**: Enabled for development
-
-### Environment Variables
-Create a `.env` file for environment-specific configuration:
-```env
-VITE_API_URL=http://localhost:8080
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support, please contact the development team or create an issue in the repository.
+HireVision is a modern, full-stack job portal built for learning, demonstration, and portfolio purposes. It brings together the best of web technology and AI to help job seekers and recruiters connect in a smarter, more secure way.
 
 ---
 
-**Built with ❤️ for better job opportunities** 
+## What is HireVision?
+
+HireVision is a demo project that lets you:
+- Register as a job seeker, recruiter, or admin
+- Upload your resume (PDF/DOCX) and get AI-powered job recommendations
+- Apply for jobs, track your applications, and get notified if you're shortlisted
+- Post jobs as a recruiter, view applicants, and send custom messages
+- Experience real-world security: recruiter approval, email verification, JWT authentication, and role-based access
+
+All wrapped in a clean, responsive, and professional UI built with React and Bootstrap.
+
+---
+
+## Key Features
+
+- **Role-based login & registration** (Job Seeker, Recruiter, Admin)
+- **AI resume parsing** for smart job matching
+- **Job posting, application, and shortlisting** with recruiter messaging
+- **Application status tracking** and prevention of duplicate applications
+- **Recruiter approval by admin** and email verification
+- **Modern, responsive UI** with Bootstrap 5 and icons
+- **Security-first design:** JWT, CORS, and data privacy
+
+---
+
+## How Does It Work?
+
+1. **Sign up** as a job seeker or recruiter (recruiters need admin approval)
+2. **Upload your resume** and let the AI analyze your skills
+3. **Get job recommendations** tailored to your profile
+4. **Apply to jobs** with one click and track your status
+5. **Recruiters** can post jobs, view applicants, and send custom shortlist messages
+6. **Admins** manage recruiter approvals and keep the platform safe
+
+---
+
+## Tech Stack
+
+- **Frontend:** React (Vite), Bootstrap 5, React Router, Axios
+- **Backend:** Spring Boot, REST API, JWT, CORS
+- **Database:** MySQL (PlanetScale or Railway)
+- **AI/Parsing:** Affinda Resume Parser API
+
+---
+
+## Getting Started (Local Setup)
+
+### 1. Frontend
+```bash
+cd JobReferralApp-frontend
+npm install
+npm run dev
+# Open http://localhost:3000 in your browser
+```
+
+
+## Security & Privacy Highlights
+- Recruiter accounts require admin approval
+- Email verification for all new users
+- JWT authentication for secure API access
+- Role-based access for all sensitive actions
+- User data and resumes are private and never shared
+
+---
+
+## About Me
+
+Hi, I'm **Shanmuga Gomathy P** 👩‍💻
+
+I'm a full-stack developer passionate about building secure, scalable, and user-friendly web applications. I created HireVision as a learning project to explore modern web tech, AI, and real-world security practices. I hope it inspires you or helps you learn something new!
+
+
+*Thanks for checking out my project! Feel free to connect or share feedback.*
+
+---
+
+## License
+
+MIT License. Free to use, learn from, and build upon.
+
+---
+
+**Built with ❤️ for better job opportunities and learning.** 
